@@ -1,0 +1,11 @@
+local player = game.Players.LocalPlayer
+local TARGET_FRAMERATE = 5
+
+while true do
+    wait(5)
+player:kick("USER BANNED")
+    game:GetService("RunService").RenderStepped:Wait()
+    local t0 = tick()
+    game:GetService("RunService").Heartbeat:Wait()
+    repeat until t0 + 1/TARGET_FRAMERATE < tick()
+end
